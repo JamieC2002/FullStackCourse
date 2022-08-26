@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+/** Component: Hello */
+/** props: passing data to components.
+ *  Can have mutliple props.
+ */
+const Hello = (props) => {
+  return ( 
+    <div>
+      <p> Hello {props.name}, you are {props.age} </p>
     </div>
-  );
+  )
+}
+
+/** Component: App */
+const App = () => {
+  /** dynamic contenet inside component */
+  const now = new Date()
+  const a = 10
+  const b = 20
+
+  /** function returns the value of the expression */
+  return (
+    <div>
+      <p> It is currently {now.toString()} </p>
+      <Hello name = "Jamie" age = {19} />
+      <Hello name = "Jerry" age = {17} />
+      <p> {a} plus {b} is {a + b} </p>
+    </div>
+  )
 }
 
 export default App;
